@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clawbot Kanban Board</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Clawbot Project Board</h1>
+    <div class="stats" id="stats"></div>
+  </header>
+
+  <section class="controls">
+    <div class="filters">
+      <label>Agent
+        <select id="filterAgent">
+          <option value="all">All</option>
+          <option>Agent-1</option>
+          <option>Agent-2</option>
+        </select>
+      </label>
+      <label>Priority
+        <select id="filterPriority">
+          <option value="all">All</option>
+          <option>High</option>
+          <option>Medium</option>
+          <option>Low</option>
+        </select>
+      </label>
+      <label>Label
+        <select id="filterLabel">
+          <option value="all">All</option>
+          <option>backend</option>
+          <option>frontend</option>
+          <option>agent-logic</option>
+          <option>automation</option>
+          <option>integration</option>
+          <option>testing</option>
+          <option>documentation</option>
+        </select>
+      </label>
+      <label>Status
+        <select id="filterStatus">
+          <option value="all">All</option>
+          <option>Backlog</option>
+          <option>Ready</option>
+          <option>In Progress</option>
+          <option>Review</option>
+          <option>Blocked</option>
+          <option>Done</option>
+        </select>
+      </label>
+    </div>
+  </section>
+
+  <section class="new-task">
+    <h2>Add Task</h2>
+    <form id="taskForm">
+      <input required id="title" placeholder="Title" />
+      <input required id="description" placeholder="Description" />
+      <select id="agent" required>
+        <option value="">Assign agent</option>
+        <option>Agent-1</option>
+        <option>Agent-2</option>
+      </select>
+      <select id="priority" required>
+        <option>High</option>
+        <option>Medium</option>
+        <option>Low</option>
+      </select>
+      <input id="dueDate" type="date" required />
+      <select id="label" required>
+        <option>backend</option>
+        <option>frontend</option>
+        <option>agent-logic</option>
+        <option>automation</option>
+        <option>integration</option>
+        <option>testing</option>
+        <option>documentation</option>
+      </select>
+      <button type="submit">Create</button>
+    </form>
+  </section>
+
+  <main id="board" class="board"></main>
+
+  <section class="activity">
+    <h2>Activity History</h2>
+    <ul id="activityLog"></ul>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>
